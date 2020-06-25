@@ -1,0 +1,71 @@
+// @use 'base' as b;
+@use "sass:map";
+
+$breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+
+/* Grid containers */
+.grid-container-fluid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  @media (min-width: map.get($breakpoints, "sm")) {
+    & {
+      gap: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
+/* Responsive grid containers */
+@each $size, $bkpt in $breakpoints {
+  .grid-container-#{$size} {
+    @extend .grid-container-fluid;
+
+    @media (min-width: $bkpt) {
+      & {
+        grid-template-columns: repeat(12,($bkpt - 13 * 16) / 12);
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.grid-container {
+  @extend .grid-container-lg;
+}
+
+/* Grid Column Helpers: */
+.grid-row {
+  grid-column: 1 / -1;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+@each $size, $bkpt in $breakpoints {
+  @for $i from 1 through 12 {
+    @media (min-width: $bkpt) {
+      .col-#{$size}-#{$i} {
+        grid-column: span $i
+      }
+    }
+  }   
+}
+
+
+.grid-row-bottom {
+  grid-column: 1 / -1;
+}

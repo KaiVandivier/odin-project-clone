@@ -1,0 +1,9 @@
+.block {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  /* font-size: 2rem; */
+  height: 4rem;
+  color: #333;
+  background: rgb(67, 217, 223);
+}
