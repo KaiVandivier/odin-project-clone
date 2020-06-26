@@ -2,6 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="framework/bootstrap-reboot.css">
   <link rel="stylesheet" href="framework/main.css">
   <link rel="stylesheet" href="styles.css">
@@ -15,27 +16,32 @@
   
   <article class="article grid-container">
     <header class="banner col-12">
-      <img class="banner__img" src="https://source.unsplash.com/random/150x150" alt="HTML and CSS">
-      <h1 class="banner__category">HTML and CSS</h1>
+      <a href="#" class="link-reset">
+        <div class="banner__link">
+          <img class="banner__img" src="https://source.unsplash.com/random/150x150" alt="HTML and CSS">
+          <h1 class="banner__category">HTML and CSS</h1>
+        </div>
+      </a>
       <h2 class="banner__title">Project: Design Your Own Grid-Based Framework</h2>
     </header>
 
     <aside class="col-12 col-md-3 aside">
-      <ul class="aside__nav-links">
-        <a href="#">
-          <li>Heading 1</li>
+      <div class="aside__nav-links">
+        <a class="link-reset" href="#">
+          <div class="aside__nav-link">Heading 1</div>
         </a>
-        <a href="#">
-          <li>Heading 2</li>
+        <a class="link-reset" href="#">
+          <div class="aside__nav-link">Heading 2</div>
         </a>
-        <a href="#">
-          <li>Heading 3</li>
+        <a class="link-reset" href="#">
+          <div class="aside__nav-link">Heading 3</div>
         </a>
-
-      </ul>
+      </div>
     </aside>
+
     <section class="col-12 col-md-9">
       <h3 class="article-heading">Introduction</h3>
+
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere iure pariatur sapiente maxime aliquam error quod, perspiciatis, adipisci illum soluta placeat assumenda aspernatur unde! Dolorum consectetur deserunt obcaecati provident esse?
       Iusto nam maiores perferendis ipsa recusandae fugit magnam cumque eius id amet. Minus blanditiis ipsam excepturi quod delectus sit praesentium, placeat numquam eligendi accusamus qui suscipit error modi. Amet, dignissimos!
 
@@ -55,11 +61,33 @@
     </section>
   </article>
 
-  <section>
-    End of article buttons
+  <section class="article-functions grid-container">
+    <div class="bottom-nav col-12">
+      <a class="bottom-nav__button link-reset" href="#">
+        View Course
+      </a>
+      <button class="bottom-nav__button-complete">
+        Complete
+      </button>
+      <a class="bottom-nav__button link-reset" href="#">
+        Next Lesson
+      </a>
+    </div>
+
+    <div class="github-cta col-12">
+      <a class="link-primary" href="#">
+        Improve this lesson on GitHub
+      </a>
+    </div>
+
+    <div class="community-cta col-12">
+      <h1 class="community-cta__heading">Have a question?</h1>
+      <p class="community-cta__sub-heading">Chat with our friendly Odin community in our Discord chatrooms!</p>
+      <a href="#" class="bottom-nav__button">Open Discord</a>
+    </div>
   </section>
 
-  <footer>
+  <footer class="footer">
     Logo, Social Media footer
   </footer>
 </body>
