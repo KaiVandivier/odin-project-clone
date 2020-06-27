@@ -15,7 +15,8 @@
 
 /* General styles */
 $brand: #ce973e;
-$text-color: #444;
+$text-color: #4a4a4a;
+$text-color-light: #828282;
 $font-stack: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 :root {
@@ -25,6 +26,24 @@ $font-stack: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 body {
   color: $text-color;
   font-family: $font-stack;
+}
+
+p {
+  line-height: 1.75;
+}
+
+.link-primary {
+  color: $brand;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.link-secondary {
+  @extend .link-primary;
+  color: $text-color-light;
 }
 
 .link-reset,
@@ -42,6 +61,93 @@ body {
 // *:not(a) {
 //   border: 1px solid skyblue;
 // }
+
+
+/* Top bar */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding-left: 1rem;
+
+  @media (min-width: 768px) {
+    & {
+      position: relative;
+      padding: 1rem;
+    }
+  }
+}
+
+.nav-links {
+  display: none;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    & {
+      display: grid;
+    }
+  }
+}
+
+.nav-link {
+  color: $text-color-light;
+  font-weight: bold;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.nav-vert-bar {
+  width: 2px;
+  height: 2rem;
+  background-color: $text-color-light;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  background-color: $brand;
+  color: white;
+}
+
+.nav-menu {
+  border: none;
+  background-image: url("assets/odin-project-menu.png");
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+
+
+
+
+/* Article */
+.article {
+  padding: 6rem 1rem 1rem;
+
+  @media (min-width: 768px) {
+    & {
+      padding: 1rem;
+    }
+  }
+}
 
 
 /* Article banner */
@@ -144,6 +250,7 @@ body {
   font-weight: 700;
   line-height: 3;
   border-radius: 0.25rem;
+  border: none;
 
   &:hover {
     color: white;
@@ -152,8 +259,8 @@ body {
 }
 
 .bottom-nav__button-complete {
-  $primary: #6abfc3;
   @extend .bottom-nav__button;
+  $primary: #6abfc3;
   background-color: $primary;
 
   &:hover {
@@ -162,22 +269,19 @@ body {
 }
 
 /* Article functions CTAs */
-.link-primary {
-  color: $brand;
+.github-cta {
+  padding: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
 
-  &:hover {
-    color: black;
-    text-decoration: none;
+  .fa-github {
+    margin-right: 0.25rem;
   }
 }
 
-.github-cta,
 .community-cta {
   text-align: center;
-}
-
-.community-cta {
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   color: #777;
   display: grid;
   gap: 0.5rem;
@@ -198,4 +302,33 @@ body {
 .footer {
   background: white;
   height: 100px;
+
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+.footer-logo {
+  display: none;
+  
+  @media (min-width: 768px) {
+    & {
+      display: block;
+      padding: 5rem 0;
+    }
+  }
+}
+
+.social-links {
+  font-size: 1.75rem;
+}
+
+.footer-nav {
+  display: none;
+
+  @media (min-width: 576px) {
+    display: block;
+  }
 }
