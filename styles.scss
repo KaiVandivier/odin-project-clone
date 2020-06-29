@@ -1,19 +1,11 @@
 @use "sass:color";
+@use "sass:map";
+@use "framework/scss/grid";
 
+/* Variables and Mixins */
+$breakpoint-sm: map.get(grid.$breakpoints, "sm");
+$breakpoint-md: map.get(grid.$breakpoints, "md");
 
-/* Testing the grid */
-.block {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  /* font-size: 2rem; */
-  height: 4rem;
-  color: #333;
-  background: rgb(67, 217, 223);
-}
-
-
-/* General styles */
 $brand: #ce973e;
 $primary: #6abfc3;
 $text-color: #4a4a4a;
@@ -24,10 +16,10 @@ $font-stack: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   box-shadow: 0 0 5px 2px rgba(0,0,0,0.1);
 }
 
-:root {
-  --brand: #ce973e;
-}
 
+
+
+/* General styles */
 body {
   color: $text-color;
   font-family: $font-stack;
